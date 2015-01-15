@@ -1,0 +1,9 @@
+{
+  "_id": "_design/fetch",
+  "views": {
+    "byDigest": {
+      "map": "function(doc) {\n  var generateDigest = function(str) {\n    str = str.toLowerCase().replace(/[\\-',\\./%\\? ]/g,\"\");\n    return str.split(\"\").sort().join(\"\");\n  };  \n  emit( generateDigest(doc._id), null);\n}"
+    }
+  },
+  "language": "javascript"
+}
