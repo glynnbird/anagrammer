@@ -1,0 +1,25 @@
+doctype html
+html(lang="en")
+head
+  include head.jade
+  script(src="/js/anagrammer.js")
+  link(rel="stylesheet",href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css")
+body
+
+  div.container
+    div.header
+      h3.text-muted
+    
+    div.jumbotron
+      h1 Anagram solver
+      p.lead Enter the letters you would like solving
+    
+      form(action="#",onsubmit="return getAnagram();")
+        div.form-group
+          label(for="name") Letters
+          input#letters.form-control(type="text",name="letters",placeholder="e.g. Moon Starer")
+        button#submitbutton.btn.btn-default(type="submit") Solve Anagram
+        
+      h2#solution
+
+   
